@@ -1,20 +1,15 @@
-import { Column, Entity, OneToOne, PrimaryGeneratedColumn } from 'typeorm';
-import { Shop } from '../shops/shop.entity';
+// src/users/user.entity.ts
+import { ObjectId } from 'mongodb';
+import { Column, Entity, ObjectIdColumn } from 'typeorm';
 
-@Entity()
+@Entity('users')
 export class User {
-  @PrimaryGeneratedColumn()
-  id: number;
+  @ObjectIdColumn()
+  id: ObjectId;
 
   @Column({ unique: true })
   email: string;
 
   @Column()
   passwordHash: string;
-
-  @Column()
-  contactNumber: string;
-
-  @OneToOne(() => Shop, (shop) => shop.owner, { cascade: true })
-  shop: Shop;
 }

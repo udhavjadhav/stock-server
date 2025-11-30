@@ -12,7 +12,7 @@ export class ShopsController {
 
   @Get('me')
   getMyShop(@CurrentUser() user: User) {
-    return this.shopsService.getShopForUser(user.id);
+    return this.shopsService.getShopForUser(0);
   }
 
   @Put('me')

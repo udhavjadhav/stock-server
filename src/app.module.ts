@@ -19,15 +19,16 @@ import { SaleItem } from './sales/sale-item.entity';
     TypeOrmModule.forRootAsync({
       useFactory: () => ({
         type: 'mongodb',
-        url: 'mongodb://localhost:27017/stock-management'
+        url: 'mongodb://localhost:27017/stock-management',
+        entities: [ User ]
       })
     }),
     AuthModule,
     UsersModule,
-    ShopsModule,
-    ProductsModule,
-    SalesModule,
-    DashboardModule
+    // ShopsModule,
+    // ProductsModule,
+    // SalesModule,
+    // DashboardModule
   ]
 })
 export class AppModule {}

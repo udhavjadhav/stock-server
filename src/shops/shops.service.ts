@@ -12,16 +12,16 @@ export class ShopsService {
   ) {}
 
   async getShopForUser(userId: number) {
-    const shop = await this.shopsRepo.findOne({
-      where: { owner: { id: userId } }
-    });
-    if (!shop) throw new NotFoundException('Shop not found');
-    return shop;
+    // const shop = await this.shopsRepo.findOne({
+    //   where: { owner: { id: userId } }
+    // });
+    // if (!shop) throw new NotFoundException('Shop not found');
+    // return shop;
   }
 
   async updateShopForUser(user: User, dto: UpdateShopDto) {
-    const shop = await this.getShopForUser(user.id);
-    Object.assign(shop, dto);
-    return this.shopsRepo.save(shop);
+    // const shop = await this.getShopForUser(user.id);
+    // Object.assign(shop, dto);
+    // return this.shopsRepo.save(shop);
   }
 }

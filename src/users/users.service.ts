@@ -12,15 +12,15 @@ export class UsersService {
   findByEmail(email: string) {
     return this.usersRepo.findOne({
       where: { email },
-      relations: ['shop']
     });
   }
 
   findById(id: number) {
-    return this.usersRepo.findOne({
-      where: { id },
-      relations: ['shop']
-    });
+    // return this.usersRepo.findOne({
+    //   where: { id },
+    //   relations: ['shop']
+    // });
+
   }
 
   save(user: Partial<User>) {
