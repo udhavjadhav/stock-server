@@ -18,14 +18,8 @@ import { SaleItem } from './sales/sale-item.entity';
     ConfigModule.forRoot({ isGlobal: true }),
     TypeOrmModule.forRootAsync({
       useFactory: () => ({
-        type: 'mysql',
-        host: process.env.DB_HOST,
-        port: parseInt(process.env.DB_PORT || '3306', 10),
-        username: process.env.DB_USER,
-        password: process.env.DB_PASS,
-        database: process.env.DB_NAME,
-        entities: [User, Shop, Product, Sale, SaleItem],
-        synchronize: true
+        type: 'mongodb',
+        url: 'mongodb://localhost:27017/stock-management'
       })
     }),
     AuthModule,
